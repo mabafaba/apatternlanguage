@@ -7,7 +7,7 @@ output:
     code_folding: hide
     theme: journal
     toc: true
-    toc_depth: 3
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -173,29 +173,29 @@ ggplot(df,aes(y=distance_to_ir,x=id))+geom_jitter(height = 0.1, width = 0,alpha 
   geom_text(aes(label=name),nudge_y = 0.3, cex = 2, check_overlap = T,position = )+
   theme_minimal()+xlab("chapter number")+ylab("distance to independent regions")
 
-
-df<-shortest.paths(g,to = nodeid(g,"independent regions"),mode = "out") %>% as.data.frame
-df$id<-apl_chapter_number(g)
-names(df)<-c("distance_to_ir", "id")
-V(g)$x<-df$distance_to_ir
-V(g)$y<-df$id
-
-edgelist <- as.data.frame(igraph::ends(g,E(g)),stringsAsFactors=FALSE)
-edgelist$x1<-V(g)[edgelist[,1]]$x 
-edgelist$y1<-V(g)[edgelist[,1]]$y
-edgelist$x2<-V(g)[edgelist[,2]]$x 
-edgelist$y2<-V(g)[edgelist[,2]]$y
-
-ggplot(df,aes(y=id,x=distance_to_ir))+
-  geom_segment(mapping = aes(x=x1,y=y1,
-                             xend=x2,yend=y2),
-               alpha = 1-(edgelist$x2/max(edgelist$x2) ),
-               arrow = arrow(length = unit(4,'pt'),type = "closed"),
-               # alpha=0.3,
-               col='#999999',data=edgelist)+
-  # geom_density2d()+
-  # geom_text(aes(label=name),check_overlap = T,hjust="left",cex=2.5)+
-  theme_minimal()+xlab("chapter number")+ylab("distance to independent regions")
+# 
+# df<-shortest.paths(g,to = nodeid(g,"independent regions"),mode = "out") %>% as.data.frame
+# df$id<-apl_chapter_number(g)
+# names(df)<-c("distance_to_ir", "id")
+# V(g)$x<-df$distance_to_ir
+# V(g)$y<-df$id
+# 
+# edgelist <- as.data.frame(igraph::ends(g,E(g)),stringsAsFactors=FALSE)
+# edgelist$x1<-V(g)[edgelist[,1]]$x 
+# edgelist$y1<-V(g)[edgelist[,1]]$y
+# edgelist$x2<-V(g)[edgelist[,2]]$x 
+# edgelist$y2<-V(g)[edgelist[,2]]$y
+# 
+# ggplot(df,aes(y=id,x=distance_to_ir))+
+#   geom_segment(mapping = aes(x=x1,y=y1,
+#                              xend=x2,yend=y2),
+#                alpha = 1-(edgelist$x2/max(edgelist$x2) ),
+#                arrow = arrow(length = unit(4,'pt'),type = "closed"),
+#                # alpha=0.3,
+#                col='#999999',data=edgelist)+
+#   # geom_density2d()+
+#   # geom_text(aes(label=name),check_overlap = T,hjust="left",cex=2.5)+
+#   theme_minimal()+xlab("chapter number")+ylab("distance to independent regions")
 
 g$x<-NULL
 g$y<-NULL
@@ -212,7 +212,7 @@ dists<-rowSums(dists,na.rm = T)
 df<-data.frame(distance_to_ir = as.vector(dists), id = apl_chapter_number(g), name = names(V(g)))
 ggplot(df,aes(y=distance_to_ir,x=id))+geom_jitter(height = 0.1, width = 0,alpha = 0.5)+
   geom_text(aes(label=name),nudge_y = 0.3, cex = 2, check_overlap = T,position = )+
-  theme_minimal()+xlab("chapter number")+ylab("distance to independent regions")
+  theme_minimal()+xlab("chapter number")+ylab("average distance to atomic patterns")
 
 g$x<-NULL
 g$y<-NULL
