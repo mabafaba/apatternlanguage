@@ -218,7 +218,7 @@ g$x<-NULL
 g$y<-NULL
 ```
 
-This gives a very different pattern, because _94 Sleeping in public_ appears roughly in the middle of the book, and is connected to a lot of mid-scale patterns. Mainly what this shows though is how sensitive this measure (starting from nodes in the network that have only incoming or outgoing connections, but not both) is to the "edges" of the observed system - Alexander might just as well have not included _94 Sleeping in public", or perhaps included an atomic pattern somewhere else, and the resulting observed hierarchy might would have changed drastically.
+This gives a very different pattern, because _94 Sleeping in public_ appears roughly in the middle of the book, and is connected to a lot of mid-scale patterns. Mainly what this shows though is how sensitive this measure (starting from nodes in the network that have only incoming or outgoing connections, but not both) is to the "edges" of the observed system - Alexander might just as well have not included _94 Sleeping in public_, or perhaps included an atomic pattern somewhere else, and the resulting observed hierarchy might would have changed drastically.
 
 
 Another way to look at this would be to consider the average distance to all nodes "downstream" compared to the average distance to all all nodes "upstream":
