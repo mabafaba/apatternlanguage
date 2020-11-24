@@ -1,0 +1,5 @@
+^LICENSE\.md$
+^apatternlanguage\.Rproj$
+^\.Rproj\.user$
+^build.R$
+^render_article.R$
