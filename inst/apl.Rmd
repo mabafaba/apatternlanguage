@@ -260,6 +260,7 @@ Overall I find this interesting as a kind of network that has a fuzzy kind of li
 
 ## Data & Code
 
+The data and source code for this article (written with R & RMarkdown) is available [on Github](https://github.com/mabafaba/apatternlanguage)
 
 <!-- This is not a random graph though: -->
 <!-- ```{r degree_distribution_randomness, results=FALSE,warning=FALSE,message=FALSE,error=TRUE, out.width=800,in.width=800} -->

@@ -1,6 +1,6 @@
 ## A Pattern Language is not a Tree
 
-The code used in the article ["A Pattern Language is not a Tree"](http://localhost/cu12/projects.php?id=5), wrapped in an R package.
+The code used in the article ["A Pattern Language is not a Tree"](http://www.martinbarner.de/projects.php?id=5), wrapped in an R package.
 
 Install with:
 
